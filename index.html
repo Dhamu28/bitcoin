@@ -4,47 +4,84 @@
     <meta charset="UTF-8">
     <title>Bitcoin</title>
     <link href="css/foundation.css" rel="stylesheet" media="screen">
-    <script src="js/foundation.topbar.js"></script>
+    <script src="js/foundation.js"></script>
+   <script src="js/foundation.topbar.js"></script>
+   <script src="js/jquery.js"></script>
+   <script src="js/chart.js"></script>
     </head>
     <body>
-      <nav style="height: 100px;" class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li style="padding-left:100px; padding-top:25px;" class="name">
-            <h1>
-              <a href="#">
-                Website title
-              </a>
-            </h1>
-          </li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-        </ul>
-     
-        <section style="padding-top:25px; margin-left: -50px;" class="top-bar-section">
-          <ul class="right">
-            <li><a href="#">Main Item 1</a></li>
-            <li><a href="#">Main Item 2</a></li>
-            <li><a href="#">Main Item 3</a></li>
-            <li><a href="#">Main Item 4</a></li>
-            <li><a href="#">Main Item 5</a></li>
-          </ul>
-        </section>
-      </nav>
+    <nav height=100px class="top-bar" data-topbar role="navigation"> 
+        <ul class="title-area"> 
+            <li class="name"> 
+              <a href="#"><img src="img/icon.png"/></a>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --> 
+            <li class="toggle-topbar menu-icon"><a href="#nav"><span>Menu</span></a></li> 
+        </ul> 
+        <section class="top-bar-section"> 
+        <!-- Right Nav Section --> 
+            <ul id="nav" class="right"> 
+                <li class="active"><a href="#">Main Item 1</a></li>
+                <li><a href="#">Main Item 2</a></li>
+                <li><a href="#">Main Item 3</a></li>
+                <li><a href="#">Main Item 4</a></li>
+                <li><a href="#">Main Item 5</a></li>
+            </ul> 
+        </section> 
+   </nav>
       <div class="row">
         <div class="large-12 columns">
-          <div class="row">
-            <div class="large-12">
-              <img src="img/test-1.png" alt="slide image">
+          <div style="border: 3px solid #333;" class="row">
+            <div class="large-12 small-12 columns">
+                       <h2>$1 Current Rate($CAD):</h2>
+            </div>
+                <div class="large-12 small-12 columns">
+                    <div style="text-align: center;" class="large-4 small-12 medium-4 columns">
+                        <h1>$502.87</h1>
+                        <p style="font-size:25px; color:#71A866;">^ + 3.35%</p>
+                        <p>Daily Training Volume:$73,000,483</p>
+                    </div>
+                    <div style="border-right: 2px solid #333;" class="large-4 small-12 medium-4 columns">
+                        <p>Daily High : $400.00</p>
+                        <p>Daily Low : $200.00</p>
+                        <p>Daily Average : $300.00</p>
+                        <p>Weekly Averrage : $300.00</p>
+                    </div>
+                    <div class="large-4 small-12 medium-4 columns">
+                        <p>24 h Change: $15.84</p>
+                        <p>Total $TC: 56,987,300</p>
+                    </div>
+                </div>
+          </div>
               <div class="large-5 small-5 large-offset-6 small-offset-5">
                   <p style="float:right;">Last Updated: 13:09:36 TUC</p>
               </div>
-          </div>
         </div>
       </div><br>
       <div class="row">
         <div class="large-12 columns">
           <div class="row">
-            <div class="large-8 small-8 large-offset-2 small-offset-2 columns">
-              <img src="img/test.png">
+            <div style="border:2px solid #333;" class="large-8 small-8 large-offset-2 small-offset-2 columns">
+            <dl class="tabs" data-tab> 
+                <dd class="active"><a id="tab1" href="#chart1">Hour</a></dd> 
+                <dd><a id="tab2" href="#chart2">24 Hours</a></dd> 
+                <dd><a id="tab2" href="#chart3">Week</a></dd> 
+                <dd><a id="tab2" href="#chart4">Month</a></dd> 
+            </dl> 
+            <div class="tabs-content"> 
+                <div class="content active" id="chart1"> 
+                    <canvas id="myChart1" width="400" height="400"></canvas>
+                </div> 
+                <div class="content" id="chart2"> 
+                    <canvas id="myChart2" width="400" height="400"></canvas>
+                </div> 
+                <div class="content" id="chart3"> 
+                    <canvas id="myChart3" width="400" height="400"></canvas>
+                </div> 
+                <div class="content" id="chart4"> 
+                    <canvas id="myChart4" width="400" height="400"></canvas>
+                </div> 
+            </div>
             </div>
           </div>
         </div>
@@ -97,5 +134,6 @@
             </div>
         </div>
       </footer>
+      <script>$(document).foundation();</script>
     </body>
 </html>
