@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bitcoin</title>
     <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
-    <script src="js/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-    <nav style="height:100px; border: 2px solid #E6E6E6;" class="top-bar" data-topbar role="navigation"> 
+    <nav class="top-bar" data-topbar role="navigation"> 
         <ul class="title-area"> 
             <li class="name"> 
               <a href="#"><img src="img/icon.png"/></a>
@@ -30,54 +29,98 @@
    </nav>
       <div class="row">
         <div class="large-12 columns">
-          <div style="border: 3px solid #ccc;" class="row">
+          <div class="row banner">
             <div class="large-12 small-12 columns">
                        <h2>$1 Current Rate($CAD):</h2>
             </div>
-                <div class="large-12 small-12 columns">
-                    <div style="text-align: center;" class="large-4 small-12 medium-4 columns">
-                        <h1>$502.87</h1>
-                        <p style="font-size:25px; color:#71A866;">^ + 3.35%</p>
-                        <p>Daily Training Volume:$73,000,483</p>
-                    </div>
-                    <div style="border-right: 2px solid #ccc;" class="large-4 small-12 medium-4 columns">
-                        <p>Daily High : $400.00</p>
-                        <p>Daily Low : $200.00</p>
-                        <p>Daily Average : $300.00</p>
-                        <p>Weekly Averrage : $300.00</p>
-                    </div>
-                    <div class="large-4 small-12 medium-4 columns">
-                        <p>24 h Change: $15.84</p>
-                        <p>Total $TC: 56,987,300</p>
-                    </div>
+            <div class="large-12 small-12 columns">
+                <div class="large-4 small-12 medium-4 columns">
+                    <h1>$502.87</h1>
+                    <p style="font-size:25px; color:#71A866;">^ + 3.35%</p>
+                    <p>Daily Training Volume:$73,000,483</p>
                 </div>
+                <div style="border-right: 2px solid #ccc;" class="large-4 small-12 medium-4 columns">
+                    <p>Daily High : $400.00</p>
+                    <p>Daily Low : $200.00</p>
+                    <p>Daily Average : $300.00</p>
+                    <p>Weekly Averrage : $300.00</p>
+                </div>
+                <div class="large-4 small-12 medium-4 columns">
+                    <p>24 h Change: $15.84</p>
+                    <p>Total $TC: 56,987,300</p>
+                </div>
+            </div>
           </div>
               <div class="large-5 small-5 large-offset-6 small-offset-5">
                   <p style="float:right;">Last Updated: 13:09:36 TUC</p>
               </div>
         </div>
-      </div><br>
+      </div>
       <div class="row">
         <div class="large-12 columns">
-          <div class="row">
-            <div style="border:2px solid #ccc;" class="large-8 small-8 large-offset-2 small-offset-2 columns">
+          <div class="row chart">
+            <div class="large-12 small-12 columns">
             <dl class="tabs" data-tab="" role="tablist"> 
                 <dd class="active"><a id="tab1" href="#chart1">Hour</a></dd> 
                 <dd><a id="tab2" href="#chart2">24 Hours</a></dd> 
                 <dd><a id="tab2" href="#chart3">Week</a></dd> 
                 <dd><a id="tab2" href="#chart4">Month</a></dd> 
+                <dd style="float: right;">
+                  <div class="row date collapse postfix-radius" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                    <div class="small-9 columns">
+                        <input class="small-3 columns" size="16" value="12-02-2012" readonly="" type="text">    
+                    </div>
+                    <div class="small-3 columns">
+                        <span class="prefix small-2 columns end"><i class="fa fa-calendar"></i>
+                    </div>
+                  </div>
+                </dd> 
+                <script>
+                    // implementation of disabled form fields
+                    var nowTemp = new Date();
+                    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+
+                    var checkin = $('#dpd1').fdatepicker({
+                        onRender: function (date) {
+                            return date.valueOf() &lt; now.valueOf() ? 'disabled' : '';
+                        }
+                    }).on('changeDate', function (ev) {
+                        if (ev.date.valueOf() &gt; checkout.date.valueOf()) {
+                            var newDate = new Date(ev.date)
+                            newDate.setDate(newDate.getDate() + 1);
+                            checkout.update(newDate);
+                        }
+                        checkin.hide();
+                        $('#dpd2')[0].focus();
+                    }).data('datepicker');
+                    var checkout = $('#dpd2').fdatepicker({
+                        onRender: function (date) {
+                            return date.valueOf() &lt;= checkin.date.valueOf() ? 'disabled' : '';
+                        }
+                    }).on('changeDate', function (ev) {
+                        checkout.hide();
+                    }).data('datepicker');
+                </script>
             </dl> 
             <div class="tabs-content"> 
                 <div class="content active" id="chart1"> 
+                <h1>First</h1>
+                <p> You can make tabs more accessible by using the code snippet below. The tabs are keyboard accessible meaning that a user can use the tab key or arrow keys to navigate through them. The role of tablist tells a screen reader what the element is and reads the necessary content.</p>
                     <canvas id="myChart1" width="400" height="400"></canvas>
                 </div> 
                 <div class="content" id="chart2"> 
+                <h1>Second</h1>
+                <p>You can make tabs more accessible by using the code snippet below. The tabs are keyboard accessible meaning that a user can use the tab key or arrow keys to navigate through them. The role of tablist tells a screen reader what the element is and reads the necessary content.</p>
                     <canvas id="myChart2" width="400" height="400"></canvas>
                 </div> 
                 <div class="content" id="chart3"> 
+                <h1>Second Last</h1>
+                <p>You can make tabs more accessible by using the code snippet below. The tabs are keyboard accessible meaning that a user can use the tab key or arrow keys to navigate through them. The role of tablist tells a screen reader what the element is and reads the necessary content.</p>
                     <canvas id="myChart3" width="400" height="400"></canvas>
                 </div> 
                 <div class="content" id="chart4"> 
+                <h1>Last</h1>
+                <p>You can make tabs more accessible by using the code snippet below. The tabs are keyboard accessible meaning that a user can use the tab key or arrow keys to navigate through them. The role of tablist tells a screen reader what the element is and reads the necessary content.</p>
                     <canvas id="myChart4" width="400" height="400"></canvas>
                 </div> 
             </div>
@@ -134,6 +177,7 @@
             </div>
         </div>
       </footer>
+    <script src="js/chart.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
