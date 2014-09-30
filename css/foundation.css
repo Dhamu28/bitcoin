@@ -1333,6 +1333,12 @@ select::-ms-expand {
   line-height: 2.3125rem; }
 
 /* Adjust padding, alignment and radius if pre/post element is a button */
+      <script>$(document).foundation();</script>
+      <script>$(document).foundation();</script>
+      <script>$(document).foundation();</script>
+      <script>$(document).foundation();</script>
+      <script>$(document).foundation();</script>
+      <script>$(document).foundation();</script>
 .postfix.button {
   padding-left: 0;
   padding-right: 0;
@@ -3436,7 +3442,7 @@ a {
 
 /* Default paragraph styles */
 p {
-  font-family: inherit;
+  font-family: 'Titillium Web Thin',sans-serif;
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.6;
