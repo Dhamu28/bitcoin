@@ -1824,7 +1824,7 @@ meta.foundation-mq-topbar {
         height: 34px;
         line-height: 33px;
         padding: 0 40px 0 15px;
-        color: white;
+        color: #333;
         position: relative; }
         .top-bar .toggle-topbar.menu-icon a span::after {
           content: "";
@@ -1834,10 +1834,10 @@ meta.foundation-mq-topbar {
           top: 50%;
           margin-top: -8px;
           right: 15px;
-          box-shadow: 0 0px 0 1px white, 0 7px 0 1px white, 0 14px 0 1px white;
+          box-shadow: 0 0px 0 1px #333, 0 7px 0 1px #333, 0 14px 0 1px #333;
           width: 16px; }
         .top-bar .toggle-topbar.menu-icon a span:hover:after {
-          box-shadow: 0 0px 0 1px white, 0 7px 0 1px white, 0 14px 0 1px white; }
+          box-shadow: 0 0px 0 1px #333, 0 7px 0 1px #333, 0 14px 0 1px #333; }
   .top-bar.expanded {
     height: auto;
     background: transparent; }
@@ -1867,7 +1867,7 @@ meta.foundation-mq-topbar {
     height: 1px;
     width: 100%; }
   .top-bar-section ul li {
-    background: #E6E6E6; }
+    background-color: #E6E6E6; }
     .top-bar-section ul li > a {
       display: block;
       width: 100%;
@@ -1915,8 +1915,8 @@ meta.foundation-mq-topbar {
           color: white; }
     .top-bar-section ul li > button {
       font-size: 0.8125rem;
-      padding-right: 15px;
-      padding-left: 15px;
+      padding-right: 10px;
+      padding-left: 10px;
       background-color: #008cba;
       border-color: #007095;
       color: white; }
@@ -1953,7 +1953,7 @@ meta.foundation-mq-topbar {
       background: #272727;
       color: white; }
     .top-bar-section ul li.active > a {
-      background: #008cba;
+      background: none;
       color: white; }
       .top-bar-section ul li.active > a:hover {
         background: #0078a0;
