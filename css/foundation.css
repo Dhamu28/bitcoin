@@ -1766,11 +1766,12 @@ meta.foundation-mq-topbar {
   overflow: hidden;
   height: 100px;
   line-height: 100px;
+  border: 2px solid #E6E6E6;
   position: relative;
   background: #f7f7f7;
   margin-bottom: 0; }
   .top-bar ul {
-    margin-top: 25%;
+    margin-top: 0;
     margin-bottom: 0;
     list-style: none; }
   .top-bar .row {
@@ -1956,8 +1957,8 @@ meta.foundation-mq-topbar {
           color: white; }
     .top-bar-section ul li:hover:not(.has-form) > a {
       background-color: none;
-      background: #272727;
-      color: #008cba; }
+      background: #008cba;
+      color: #ffffff; }
     .top-bar-section ul li.active > a {
       background: #008cba;
       color: white; }
@@ -2083,17 +2084,21 @@ meta.foundation-mq-topbar {
       background: none;
       color: white; }
     .top-bar-section li:not(.has-form) a:not(.button) {
-      padding: 0 15px;
+      padding: 0 10px;
       line-height: 45px;
       background: #f7f7f7; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
-        background-color: #f7f7f7;
+        background-color: #008cba;
         text-decoration: underline;
-        background: #f7f7f7; }
+      border-radius: 10px;
+        background: #008cba; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
-      padding: 0 5px;
+      padding: 0 10px;
       line-height: 45px;
-      color: #008bca;
+        background-color: #008cba;
+        background: #008cba; 
+      color: #fff;
+      border-radius: 10px;
       text-decoration: underline; }
     .top-bar-section .has-dropdown > a {
       padding-right: 35px !important; }
