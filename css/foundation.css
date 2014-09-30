@@ -2089,7 +2089,6 @@ meta.foundation-mq-topbar {
       background: #f7f7f7; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: #008cba;
-        text-decoration: underline;
       border-radius: 10px;
         background: #008cba; }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
@@ -2099,7 +2098,7 @@ meta.foundation-mq-topbar {
         background: #008cba; 
       color: #fff;
       border-radius: 10px;
-      text-decoration: underline; }
+       }
     .top-bar-section .has-dropdown > a {
       padding-right: 35px !important; }
       .top-bar-section .has-dropdown > a:after {
@@ -3737,7 +3736,8 @@ blockquote p {
     display: inherit !important; } }
 .tabs {
   margin-bottom: 0 !important;
-  margin-left: 0; }
+  margin-right: -15px;
+  margin-left: -15px; }
   .tabs:before, .tabs:after {
     content: " ";
     display: table; }
