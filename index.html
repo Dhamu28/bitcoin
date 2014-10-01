@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bitcoin</title>
     <link rel="stylesheet" href="css/foundation.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">    
+    <link rel="stylesheet" href="css/foundation-datepicker.css" />
     <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
@@ -68,10 +70,10 @@
                 <dd style="float: right;">
                   <div class="row date collapse postfix-radius" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                     <div class="small-9 columns">
-                        <input class="small-3 columns" size="16" value="12-02-2012" readonly="" type="text">    
+                        <input class="small-3 columns" style="height:57px;" size="16" value="12-02-2012" readonly="" type="text">    
                     </div>
                     <div class="small-3 columns">
-                        <span class="prefix small-2 columns end"><i class="fa fa-calendar"></i>
+                        <span style="height:56px;" class="prefix small-2 columns end"><i class="fa fa-calendar"></i></span>
                     </div>
                   </div>
                 </dd> 
@@ -180,8 +182,12 @@
     <script src="js/chart.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/foundation-datepicker.js"></script>
     <script>
       $(document).foundation();
+    </script>
+    <script>
+        $('.fdatepicker').fdatepicker()
     </script>
   </body>
 </html>
