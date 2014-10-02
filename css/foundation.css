@@ -1388,7 +1388,7 @@ select::-ms-expand {
 /* Separate prefix and postfix styles when on span or label so buttons keep their own */
 span.prefix, label.prefix {
   background: #f2f2f2;
-  border-right: none;
+  border-right: 1px medium #ccc;
   color: #333333;
   border-color: #cccccc; }
 
@@ -1878,20 +1878,17 @@ meta.foundation-mq-topbar {
     .top-bar-section ul li > a {
       display: block;
       width: 100%;
-      color: #008CBA;
+      color: #428bca;
       padding: 12px 0 12px 0;
       padding-left: 15px;
-      font-family:'Titillium Web Thin',sans-serif;
-      font-size: 0.8125rem;
-      font-weight: normal;
+      font-size: 15px;
+      font-weight: 300;
       text-transform: none; }
       .top-bar-section ul li > a.button {
-        font-size: 0.8125rem;
+        font-size: 15px;
         padding-right: 15px;
         padding-left: 15px;
-        background-color: #008cba;
-        border-color: #007095;
-        color: white; }
+        color: #428bca; }
         .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
           background-color: #007095; }
         .top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
@@ -1956,15 +1953,12 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li > button.alert:hover, .top-bar-section ul li > button.alert:focus {
           color: white; }
     .top-bar-section ul li:hover:not(.has-form) > a {
-      background-color: none;
-      background: #008cba;
-      color: #ffffff; }
+      text-decoration: underline;
+      color: #428bca; }
     .top-bar-section ul li.active > a {
-      background: #008cba;
-      color: white; }
+      color: #428bca; }
       .top-bar-section ul li.active > a:hover {
-        background: #0078a0;
-        color: white; }
+      color: #428bca; }
   .top-bar-section .has-form {
     padding: 15px; }
   .top-bar-section .has-dropdown {
@@ -2080,24 +2074,19 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li .js-generated {
           display: none; }
     .top-bar-section li.hover > a:not(.button) {
-      background-color: #555555;
-      background: none;
-      color: white; }
+        text-decoration: underline;
+      color: #428bca; }
     .top-bar-section li:not(.has-form) a:not(.button) {
       padding: 0 10px;
       line-height: 45px;
       background: #f7f7f7; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
-        background-color: #008cba;
-      border-radius: 10px;
-        background: #008cba; }
+      text-decoration: underline;
+         }
     .top-bar-section li.active:not(.has-form) a:not(.button) {
       padding: 0 10px;
       line-height: 45px;
-        background-color: #008cba;
-        background: #008cba; 
-      color: #fff;
-      border-radius: 10px;
+      color: #428bca;
        }
     .top-bar-section .has-dropdown > a {
       padding-right: 35px !important; }
@@ -2190,12 +2179,11 @@ meta.foundation-mq-topbar {
         left: 100%; }
 
   .no-js .top-bar-section ul li:hover > a {
-    background-color: #555555;
-    background: #272727;
-    color: white; }
+      text-decoration: underline;
+    color: #428bca; }
   .no-js .top-bar-section ul li:active > a {
-    background: #008cba;
-    color: white; }
+      text-decoration: underline;
+    color: #428bca; }
   .no-js .top-bar-section .has-dropdown:hover > .dropdown {
     display: block;
     position: static !important;
@@ -3436,7 +3424,7 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #008cba;
+  color: #428bca;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
@@ -3461,7 +3449,6 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #C40C0C;

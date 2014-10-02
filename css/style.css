@@ -3,6 +3,16 @@
     text-align: center;
     border: 1px solid #ccc;
 }   
+.banner h1, h2{
+    font-size: 4.3em;
+    font-weight: 600;
+}   
+ul.nav{
+    padding-top: 25px;
+}   
+ul.nav > li > a {
+    text-transform: uppercase;
+}   
 .chart{
     background-color: #f7f7f7;
     border: 1px solid #ccc;
@@ -19,4 +29,8 @@
 footer{
     border-top:1px solid #CCCCCC; 
     background-color: #F7F7F7;
+}   
+footer > li, p, a {
+    font-size: 16px;
+    font-weight: 300;
 }   
