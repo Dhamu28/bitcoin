@@ -16,3 +16,7 @@
 .bottom-20{
     padding-bottom: 20px;
 }   
+footer{
+    border-top:1px solid #CCCCCC; 
+    background-color: #F7F7F7;
+}   
