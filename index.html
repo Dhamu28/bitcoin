@@ -9,34 +9,39 @@
     <link rel="stylesheet" href="css/foundation-datepicker.css" />
     <link rel="stylesheet" href="css/style.css" />
     </head>
-    <nav class="top-bar" data-topbar role="navigation"> 
-        <ul class="title-area"> 
-            <li class="name"> 
-              <a href="#"><img src="img/icon.png"/></a>
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --> 
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> 
-        </ul> 
-        <section class="top-bar-section"> 
-        <!-- Right Nav Section --> 
-            <ul class="right nav"> 
-                <li class="active"><a href="#">Main Item 1</a></li>
-                <li><a href="#">Main Item 2</a></li>
-                <li><a href="#">Main Item 3</a></li>
-                <li><a href="#">Main Item 4</a></li>
-                <li><a href="#">Main Item 5</a></li>
-            </ul> 
-        </section> 
-   </nav>
     <body>
+    <div class="banner-top">
+        <div class="row">
+            <nav class="top-bar" data-topbar role="navigation"> 
+                <ul class="title-area"> 
+                    <li class=""> 
+                      <a href="#"><img src="img/icon.png"/></a>
+                    </li>
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone --> 
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> 
+                </ul> 
+                <section class="top-bar-section"> 
+                <!-- Right Nav Section --> 
+                    <ul class="right nav"> 
+                        <li class="active"><a href="#">Main Item 1</a></li>
+                        <li><a href="#">Main Item 2</a></li>
+                        <li><a href="#">Main Item 3</a></li>
+                        <li><a href="#">Main Item 4</a></li>
+                        <li><a href="#">Main Item 5</a></li>
+                    </ul> 
+                </section> 
+           </nav>
+           </div>
+        </div>
+    </div>
       <div class="row top-20">
         <div class="large-12 medium-12 small-12 columns">
           <div class="row banner">
             <div class="large-12 medium-12 small-12 columns">
                 <div class="large-4 small-12 medium-4 columns top-20">
-                   <h4 class="centered"><i class="fa fa-btc"></i>1 Current Rate($CAD):</h4>
+                   <h4 class="centered">฿1 Current Rate($CAD):</h4>
                     <h1><sup>$</sup>502.87</h1>
-                    <p style="color:#008000;"><i class="fa fa-caret-up fa-lg"></i>   + 3.35%</p>
+                    <p style="color:#008000;"><i class="fa fa-caret-up fa-lg"></i><!--i style="color:#C40C0C;" class="fa fa-caret-down fa-lg"></i-->   + 3.35%</p>
                     <p><span class="clr">daily training volume:</span> $73,000,483</p>
                 </div>
                 <div class="large-4 small-12 medium-4 columns">
@@ -49,7 +54,7 @@
                 <div class="large-4 small-12 medium-4 columns">
                     <br />
                     <p><span class="clr">24 h change:</span> $15.84</p>
-                    <p><span class="clr">total $TC:</span> 56,987,300</p>
+                    <p><span class="clr">total ฿TC:</span> 56,987,300</p>
                 </div>
             </div>
           </div>
@@ -113,15 +118,15 @@
                         <input type="text" name="tc" placeholder="1"/>
                     </div>
                     <div class="large-4 medium-4 small-4 columns">
-                        <label for="left-label">
-                        $TC
+                        <label style="padding-top: 8px;" for="left-label">
+                        ฿TC
                         </label>
                     </div>
                     <div class="large-8 medium-8 small-8 columns">
                         <input type="text" name="tc" placeholder="509"/>
                     </div>
                     <div class="large-4 medium-4 small-4 columns">
-                        <label for="left-label">
+                        <label style="padding-top: 8px;" for="left-label">
                         $CAD
                         </label>
                     </div>
@@ -142,10 +147,10 @@
             <div class="row top-20">
               <div class="large-3 medium-3 small-12 large-text-left columns">
                   <span style="border-bottom: 2px solid #ccc">Donate</span>
-                  <p class="top-20">948our Bitcoin Address 9867</p>
+                  <a herf="#"><p class="top-20">948our Bitcoin Address 9867</p></a>
               </div>
  
-              <div class="large-6 medium-6 small-12 large-push-1 columns">
+              <div class="large-6 medium-6 small-12 large-text-center medium-text-center columns">
                 <div class="show-for-large-up"><br /></div>
                   <ul class="inline-list">
                     <li><a href="#">Link 1</a></li>
