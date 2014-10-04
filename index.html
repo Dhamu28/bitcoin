@@ -4,8 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bitcoin</title>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="css/foundation.css" />
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">    
+    <script src="js/foundation-datepicker.js"></script>
     <link rel="stylesheet" href="css/foundation-datepicker.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript">
@@ -52,7 +54,6 @@
             });
         });
         }//]]>
-
     </script>
     </head>
     <body>
@@ -220,11 +221,65 @@
         </div>
       </footer>
     <script src="js/Chart.min.js"></script>
-    <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
-    <script src="js/foundation-datepicker.js"></script>
     <script>
       $(document).foundation();
     </script>
+		<script>
+			$(function () {
+				window.prettyPrint && prettyPrint();
+				$('#dp3').fdatepicker();
+				$('#dp3').fdatepicker();
+				$('#dp-margin').fdatepicker();
+				$('#dpMonths').fdatepicker();
+				var startDate = new Date(2012, 1, 20);
+				var endDate = new Date(2012, 1, 25);
+				$('#dp4').fdatepicker()
+					.on('changeDate', function (ev) {
+					if (ev.date.valueOf() > endDate.valueOf()) {
+						$('#alert').show().find('strong').text('The start date can not be greater then the end date');
+					} else {
+						$('#alert').hide();
+						startDate = new Date(ev.date);
+						$('#startDate').text($('#dp4').data('date'));
+					}
+					$('#dp4').fdatepicker('hide');
+				});
+				$('#dp5').fdatepicker()
+					.on('changeDate', function (ev) {
+					if (ev.date.valueOf() < startDate.valueOf()) {
+						$('#alert').show().find('strong').text('The end date can not be less then the start date');
+					} else {
+						$('#alert').hide();
+						endDate = new Date(ev.date);
+						$('#endDate').text($('#dp5').data('date'));
+					}
+					$('#dp5').fdatepicker('hide');
+				});
+				// implementation of disabled form fields
+				var nowTemp = new Date();
+				var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+				var checkin = $('#dpd1').fdatepicker({
+					onRender: function (date) {
+						return date.valueOf() < now.valueOf() ? 'disabled' : '';
+					}
+				}).on('changeDate', function (ev) {
+					if (ev.date.valueOf() > checkout.date.valueOf()) {
+						var newDate = new Date(ev.date)
+						newDate.setDate(newDate.getDate() + 1);
+						checkout.update(newDate);
+					}
+					checkin.hide();
+					$('#dpd2')[0].focus();
+				}).data('datepicker');
+				var checkout = $('#dpd2').fdatepicker({
+					onRender: function (date) {
+						return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+					}
+				}).on('changeDate', function (ev) {
+					checkout.hide();
+				}).data('datepicker');
+			});
+		</script>
   </body>
 </html>
