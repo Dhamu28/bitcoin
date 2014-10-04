@@ -1,0 +1,84 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin</title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css" rel="stylesheet"></link>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+
+    <script src="http://www.chartjs.org/assets/Chart.min.js" type="text/javascript"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //<![CDATA[ 
+        window.onload=function(){
+        $(function() {
+            'use strict';
+
+            var line_chart_options = {
+                scaleGridLineColor : "rgba(0,0,0,.05)",
+                responsive: true
+            };
+            var data = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "My Second dataset",
+                        fillColor: "rgba(151,187,205,0.2)",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    }
+                ]
+            };
+            var ctx1 = $("#myChart1").get(0).getContext("2d");
+            var myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
+
+            var ctx2 = $("#myChart2").get(0).getContext("2d");
+            var myLineChart2;
+
+            $('#tab1').on('shown.bs.tab', function (e) {
+                myLineChart2.destroy();
+                myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
+            });
+
+            $('#tab2').on('shown.bs.tab', function (e) {
+                myLineChart1.destroy();
+                myLineChart2 = new Chart(ctx2).Line(data, line_chart_options);
+            });
+        });
+        }//]]>
+
+    </script>
+    </head>
+    <body>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active">
+                <a id="tab1" data-toggle="tab" role="tab" href="#chart1">Chart 1</a>
+            </li>
+            <li class=""><a id="tab2" data-toggle="tab" role="tab" href="#chart2">Chart 2</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="chart1" class="tab-pane active">
+                <canvas id="myChart1" height="1334" width="1334" style="width: 1334px; height: 1334px;"></canvas>
+            </div>
+            <div id="chart2" class="tab-pane">
+                <canvas id="myChart2" height="1342" width="1342" style="width: 1342px; height: 1342px;"></canvas>
+            </div>
+        </div>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

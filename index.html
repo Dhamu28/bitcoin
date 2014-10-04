@@ -8,6 +8,52 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">    
     <link rel="stylesheet" href="css/foundation-datepicker.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript">
+        //<![CDATA[ 
+        window.onload=function(){
+        $(function() {
+            'use strict';
+
+            var line_chart_options = {
+                scaleGridLineColor : "rgba(0,0,0,.05)",
+                responsive: true
+            };
+            var data = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "My Second dataset",
+                        fillColor: "rgba(151,187,205,0.2)",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    }
+                ]
+            };
+            var ctx1 = $("#myChart1").get(0).getContext("2d");
+            var myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
+
+            var ctx2 = $("#myChart2").get(0).getContext("2d");
+            var myLineChart2;
+
+            $('#tab1').on('shown.bs.tab', function (e) {
+                myLineChart2.destroy();
+                myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
+            });
+
+            $('#tab2').on('shown.bs.tab', function (e) {
+                myLineChart1.destroy();
+                myLineChart2 = new Chart(ctx2).Line(data, line_chart_options);
+            });
+        });
+        }//]]>
+
+    </script>
     </head>
     <body>
     <div class="banner-top">
@@ -85,8 +131,6 @@
             </dl> 
             <div class="tabs-content"> 
                 <div class="content active" id="chart1"> 
-                        <h1>First</h1>
-                        <p> You can make tabs more accessible by using the code snippet below. The tabs are keyboard accessible meaning that a user can use the tab key or arrow keys to navigate through them. The role of tablist tells a screen reader what the element is and reads the necessary content.</p>
                         <canvas class="large-12 medium-12 small-12 columns" id="myChart1"></canvas>
                 </div>
                 <div class="content" id="chart2"> 
@@ -175,10 +219,8 @@
             </div>
         </div>
       </footer>
-    <script src="js/chart.js"></script>
     <script src="js/Chart.min.js"></script>
     <script src="js/vendor/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/foundation-datepicker.js"></script>
     <script>
