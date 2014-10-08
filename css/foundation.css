@@ -1788,7 +1788,7 @@ meta.foundation-mq-topbar {
     padding-bottom: 0.4125rem;
     margin-bottom: 0;
     font-size: 0.75rem; }
-    @media only screen and (max-width: 40em) {
+    @media only screen and (max-width: 40.063em) {
       .top-bar .button, .top-bar button {
         position: relative;
         top: -1px; } }
