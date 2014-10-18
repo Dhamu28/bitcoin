@@ -60,15 +60,15 @@
 	        myLineChart2 = new Chart(ctx2).Line(data, line_chart_options);
 	    });
 	  
-	  $('#tab3').on('shown.bs.tab', function (e) {
+	    $('#tab3').on('shown.bs.tab', function (e) {
 	        myLineChart2.destroy();
 	        myLineChart3 = new Chart(ctx3).Line(data, line_chart_options);
 	    });
 	  
-	  $('#tab4').on('shown.bs.tab', function (e) {
+	    $('#tab4').on('shown.bs.tab', function (e) {
 	        myLineChart3.destroy();
 	        myLineChart4 = new Chart(ctx4).Line(data, line_chart_options);
-    });
+    	    });
         });
         }//]]>
     </script>
@@ -136,10 +136,10 @@
           <div class="row chart">
             <div class="large-12 medium-12 small-12 columns">
             <dl class="tabs" data-tab="" role="tablist"> 
-                <dd class="active"><a id="tab1" href="#chart1">Hour</a></dd> 
-                <dd><a id="tab2" href="#chart2">24 Hours</a></dd> 
-                <dd><a id="tab3" href="#chart3">Week</a></dd> 
-                <dd><a id="tab4" href="#chart4">Month</a></dd> 
+                <dd class="active"><a id="tab1" href="#chart1" role="tab" data-toggle="tab">Hour</a></dd> 
+                <dd><a id="tab2" href="#chart2" role="tab" data-toggle="tab">24 Hours</a></dd> 
+                <dd><a id="tab3" href="#chart3" role="tab" data-toggle="tab">Week</a></dd> 
+                <dd><a id="tab4" href="#chart4" role="tab" data-toggle="tab">Month</a></dd> 
                 <dd>
                   <div class="row date collapse postfix-radius" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                     <div class="large-9 medium-9 small-9 columns">
