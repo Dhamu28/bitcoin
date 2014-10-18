@@ -37,21 +37,37 @@
                     }
                 ]
             };
-            var ctx1 = $("#myChart1").get(0).getContext("2d");
-            var myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
-
-            var ctx2 = $("#myChart2").get(0).getContext("2d");
-            var myLineChart2;
-
-            $('#tab1').on('shown.bs.tab', function (e) {
-                myLineChart2.destroy();
-                myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
-            });
-
-            $('#tab2').on('shown.bs.tab', function (e) {
-                myLineChart1.destroy();
-                myLineChart2 = new Chart(ctx2).Line(data, line_chart_options);
-            });
+             var ctx1 = $("#myChart1").get(0).getContext("2d");
+	    var myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
+	
+	    var ctx2 = $("#myChart2").get(0).getContext("2d");
+	    var myLineChart2;
+	  
+	    var ctx3 = $("#myChart3").get(0).getContext("2d");
+	    var myLineChart3;
+	  
+	    var ctx4 = $("#myChart4").get(0).getContext("2d");
+	    var myLineChart4;
+	  
+	    $('#tab1').on('shown.bs.tab', function (e) {
+	        myLineChart4.destroy();
+	        myLineChart1 = new Chart(ctx1).Line(data, line_chart_options);
+	    });
+	
+	    $('#tab2').on('shown.bs.tab', function (e) {
+	        myLineChart1.destroy();
+	        myLineChart2 = new Chart(ctx2).Line(data, line_chart_options);
+	    });
+	  
+	  $('#tab3').on('shown.bs.tab', function (e) {
+	        myLineChart2.destroy();
+	        myLineChart3 = new Chart(ctx3).Line(data, line_chart_options);
+	    });
+	  
+	  $('#tab4').on('shown.bs.tab', function (e) {
+	        myLineChart3.destroy();
+	        myLineChart4 = new Chart(ctx4).Line(data, line_chart_options);
+    });
         });
         }//]]>
     </script>
@@ -121,8 +137,8 @@
             <dl class="tabs" data-tab="" role="tablist"> 
                 <dd class="active"><a id="tab1" href="#chart1">Hour</a></dd> 
                 <dd><a id="tab2" href="#chart2">24 Hours</a></dd> 
-                <dd><a id="tab1" href="#chart3">Week</a></dd> 
-                <dd><a id="tab2" href="#chart4">Month</a></dd> 
+                <dd><a id="tab3" href="#chart3">Week</a></dd> 
+                <dd><a id="tab4" href="#chart4">Month</a></dd> 
                 <dd>
                   <div class="row date collapse postfix-radius" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                     <div class="large-9 medium-9 small-9 columns">
@@ -142,10 +158,10 @@
                         <canvas class="large-12 medium-12 small-12 columns" id="myChart2"></canvas>
                 </div> 
                 <div class="content" id="chart3"> 
-                        <canvas class="large-12 medium-12 small-12 columns" id="myChart1"></canvas>
+                        <canvas class="large-12 medium-12 small-12 columns" id="myChart3"></canvas>
                 </div> 
                 <div class="content" id="chart4"> 
-                        <canvas class="large-12 medium-12 small-12 columns" id="myChart2"></canvas>
+                        <canvas class="large-12 medium-12 small-12 columns" id="myChart4"></canvas>
                 </div> 
             </div>
             </div>
